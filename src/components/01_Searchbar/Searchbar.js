@@ -1,11 +1,16 @@
 import React, { Component } from 'react';
 import css from './Searchbar.module.scss';
+import PropTypes from "prop-types";
 
 export default class Searchbar extends Component {
 
 	state = {
 		imageName: '',
 	}
+
+	static propTypes = {
+		onSubmit: PropTypes.func.isRequired,
+	  };
 
 	handleNameChange = evt => {
 		// console.log(evt.currentTarget.value.toLowerCase());

@@ -2,14 +2,24 @@ import React, { Component } from 'react';
 import css from './ImageGalleryItem.module.scss';
 import Loader from 'components/04_Loader';
 import fetchImage from 'servises/pixabay-api';
+import PropTypes from "prop-types";
 
 export default class ImageGalleryItem extends Component {
+
   state = {
     imageNameFetch: [],
     // loading: false,
     error: null,
     status: 'idle',
 	buttonHiden: false,
+  };
+
+  static propTypes = {
+	buttonVsible: PropTypes.bool.isRequired,
+	pageValue: PropTypes.number.isRequired,
+	imageModalItem: PropTypes.func.isRequired,
+	clickTogleModal: PropTypes.func.isRequired,
+	imageValue: PropTypes.string.isRequired,
   };
 
   componentDidUpdate(prevProps, prevState) {

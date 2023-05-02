@@ -1,11 +1,20 @@
 import React, { Component } from 'react';
 import css from './Modal.module.scss';
 import { createPortal } from 'react-dom';
+import PropTypes from "prop-types";
+
 
 // create portal
 const modalRoot = document.querySelector('#modalRoot');
 
 export default class Modal extends Component {
+
+	  static propTypes = {
+		onClose: PropTypes.func.isRequired,
+		largeImageURL: PropTypes.string.isRequired,
+		tags: PropTypes.string.isRequired,
+	  };
+
   componentDidMount() {
     // console.log('mount');
 

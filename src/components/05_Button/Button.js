@@ -1,11 +1,16 @@
 import React, { Component } from 'react';
 import css from './Button.module.scss';
+import PropTypes from "prop-types";
 
 export default class Button extends Component {
 
 	state = {
 		page: 1,
 }
+
+static propTypes = {
+	changeValue: PropTypes.func.isRequired,
+  };
 
 	increment = (evt) => {
 		evt.preventDefault();
